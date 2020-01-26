@@ -14,18 +14,17 @@
 	<h1>What size am I?</h1>
 
 	<cfscript>
-		sizes = [
-			{ "styleClass" : "d-block d-sm-none",		"name" : "Extra small"},
-			{ "styleClass" : "d-none d-sm-block d-md-none", "name" : "Small"},
-			{ "styleClass" : "d-none d-md-block d-lg-none", "name" : "Medium"},
-			{ "styleClass" : "d-none d-lg-block d-xl-none", "name" : "Large"},
-			{ "styleClass" : "d-none d-xl-block", 		"name" : "Extra large"}
+	sizes = [
+			{ "styleClass" : "d-block d-sm-none",			"name" : "Extra small", "look" : "warning"},
+			{ "styleClass" : "d-none d-sm-block d-md-none", 	"name" : "Small", "look" : "info"},
+			{ "styleClass" : "d-none d-md-block d-lg-none", 	"name" : "Medium", "look" : "success"},
+			{ "styleClass" : "d-none d-lg-block d-xl-none", 	"name" : "Large", "look" : "primary"},
+			{ "styleClass" : "d-none d-xl-block", 			"name" : "Extra large", "look" : "dark"}
 		];
 
 	sizes.each(function(item){
-		writeoutput("<h3 class='#item.styleClass#'><span class'badge badge-secondary'>#item.name#</span></h3>");
+		writeoutput("<p class='#item.styleClass#'><span class='badge badge-#item.look#'>#item.name#</span></p>");
 	})
-
 	</cfscript> 
 
 
